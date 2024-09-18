@@ -1,9 +1,15 @@
 pipeline {
     agent any
     tools {
-        nodejs "NodeJS 22.8.0" // Use the name you gave in Global Tool Configuration
+        nodejs "NodeJS 22.8.0"
     }
     stages {
+        stage('Verify Tools') {
+            steps {
+                sh 'node --version'
+                sh 'npm --version'
+            }
+        }
         stage('Build') {
             steps {
                 sh 'npm install'
