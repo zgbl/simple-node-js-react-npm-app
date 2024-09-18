@@ -1,7 +1,7 @@
 pipeline {
     agent any
     tools {
-        nodejs "NodeJS 22.9.0"
+        nodejs "NodeJS1"
     }
     stages {
         stage('Verify Tools') {
